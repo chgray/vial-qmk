@@ -22,14 +22,4 @@ void matrix_init_kb(void) {
 //#endif
 #endif
 #endif
-
- /*   int i=6000;
-    for(;i>0;--i){
-        #if VIA_ENABLE
-            uprintf("Booting VIA:CKEY in %d\r\n", i);
-        #else
-            uprintf("Booting NO_VIAL:CKEY in %d\r\n", i);
-        #endif
-    }
-*/
 }
