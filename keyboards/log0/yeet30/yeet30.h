@@ -1,6 +1,7 @@
 #ifndef YEET_30_H
 #define YEET_30_H
 
+#include "quantum.h"
 
   // 18, 17, 17, 16, 15, 11
   #define LAYOUT( \
