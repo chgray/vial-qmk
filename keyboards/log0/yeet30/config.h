@@ -21,9 +21,24 @@
 #define UNUSED_PINS
 #define DIODE_DIRECTION COL2ROW
 
+//#define RGB_DI_PIN E6
+//#define RGBLIGHT_ANIMATIONS
+//#define RGBLED_NUM 98   // Number of LEDs
+
+//#define DRIVER_LED_TOTAL 98
+
+
+/* RGB LEDs */
 #define RGB_DI_PIN E6
-#define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 98   // Number of LEDs
+#define RGB_DISABLE_AFTER_TIMEOUT 0 // number of ticks to wait until disabling effects
+#define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
+#define RGB_MATRIX_KEYPRESSES
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#define RGB_MATRIX_LED_PROCESS_LIMIT 4
+#define RGB_MATRIX_LED_FLUSH_LIMIT 26
+#define DRIVER_LED_TOTAL 1
+
+
 #define DEBOUNCE 5
 #define LOCKING_SUPPORT_ENABLE
 #define LOCKING_RESYNC_ENABLE

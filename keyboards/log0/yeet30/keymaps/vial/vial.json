@@ -2,9 +2,7 @@
     "name": "LG-03",
     "vendorId": "0x4c47",
     "productId": "0x4347",
-    "lighting": {
-        "extends": "qmk_rgblight"
-    },
+    "lighting": "vialrgb",
     "matrix": {
         "rows": 7,
         "cols": 14
