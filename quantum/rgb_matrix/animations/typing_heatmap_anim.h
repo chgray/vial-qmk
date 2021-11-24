@@ -23,17 +23,19 @@ void process_rgb_matrix_typing_heatmap(uint8_t row, uint8_t col) {
 
     for(uint8_t ledIdx = 0; ledIdx < DRIVER_LED_TOTAL; ++ledIdx)
     {
-        int16_t dx   = g_led_config.point[ledIdx].x - myX;
-        int16_t dy   = g_led_config.point[ledIdx].y - myY;
+        int32_t dx   = g_led_config.point[ledIdx].x - myX;
+        int32_t dy   = g_led_config.point[ledIdx].y - myY;
         uint8_t dist = sqrt16(dx * dx + dy * dy);
 
         if (!HAS_ANY_FLAGS(g_led_config.flags[ledIdx], (LED_FLAG_KEYLIGHT | LED_FLAG_UNDERGLOW)))
             continue;
 
-        if(dist < 20)
+        if(dist < 30)
         {
-            uprintf("  LED:%d  dist=%d\r\n", ledIdx, dist);
-            g_rgb_led_frame_buffer[ledIdx] = qadd8(g_rgb_led_frame_buffer[ledIdx], 16);
+            int32_t amt = 16 + (30 - dist)/5;
+
+            uprintf("  LED:%d  x=%d, y=%d, dist=%d,  amt=%d\r\n", ledIdx, g_led_config.point[ledIdx].x,g_led_config.point[ledIdx].y, dist,amt);
+            g_rgb_led_frame_buffer[ledIdx] = qadd8(g_rgb_led_frame_buffer[ledIdx], amt);
         }
     }
 }
