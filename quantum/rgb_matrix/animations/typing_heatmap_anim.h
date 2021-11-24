@@ -1,8 +1,5 @@
 #if defined(RGB_MATRIX_FRAMEBUFFER_EFFECTS) && defined(ENABLE_RGB_MATRIX_TYPING_HEATMAP)
 
-
-//
-
 #define RGB_MATRIX_EFFECT_TYPING_HEATMAP
 RGB_MATRIX_EFFECT(TYPING_HEATMAP)
 #    ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
@@ -17,7 +14,7 @@ void process_rgb_matrix_typing_heatmap(uint8_t row, uint8_t col) {
     uint8_t myX = g_led_config.point[myLed].x;
     uint8_t myY = g_led_config.point[myLed].y;
 
-    uprintf("Typing Heatmap : %d, %d.  LED=%d\r\n", row, col, g_led_config.matrix_co[row][col]);
+   // uprintf("Typing Heatmap : %d, %d.  LED=%d\r\n", row, col, g_led_config.matrix_co[row][col]);
 
     g_rgb_led_frame_buffer[myLed] = qadd8(g_rgb_led_frame_buffer[myLed], 32);
 
@@ -34,7 +31,7 @@ void process_rgb_matrix_typing_heatmap(uint8_t row, uint8_t col) {
         {
             int32_t amt = 16 + (30 - dist)/5;
 
-            uprintf("  LED:%d  x=%d, y=%d, dist=%d,  amt=%d\r\n", ledIdx, g_led_config.point[ledIdx].x,g_led_config.point[ledIdx].y, dist,amt);
+           // uprintf("  LED:%d  x=%d, y=%d, dist=%d,  amt=%d\r\n", ledIdx, g_led_config.point[ledIdx].x,g_led_config.point[ledIdx].y, dist,amt);
             g_rgb_led_frame_buffer[ledIdx] = qadd8(g_rgb_led_frame_buffer[ledIdx], amt);
         }
     }
