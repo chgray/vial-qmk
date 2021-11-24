@@ -226,6 +226,9 @@ extern last_hit_t g_last_hit_tracker;
 #ifdef RGB_MATRIX_FRAMEBUFFER_EFFECTS
 extern uint8_t g_rgb_frame_buffer[MATRIX_ROWS][MATRIX_COLS];
 #endif
+#ifdef ENABLE_RGB_MATRIX_TYPING_HEATMAP
+extern uint8_t g_rgb_led_frame_buffer[DRIVER_LED_TOTAL];
+#endif
 
 #if !defined(RGB_MATRIX_MAXIMUM_BRIGHTNESS) || RGB_MATRIX_MAXIMUM_BRIGHTNESS > UINT8_MAX
 #    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS

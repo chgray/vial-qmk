@@ -119,6 +119,9 @@ __attribute__((weak)) RGB rgb_matrix_hsv_to_rgb(HSV hsv) { return hsv_to_rgb(hsv
 // globals
 rgb_config_t rgb_matrix_config;  // TODO: would like to prefix this with g_ for global consistancy, do this in another pr
 uint32_t     g_rgb_timer;
+#ifdef ENABLE_RGB_MATRIX_TYPING_HEATMAP
+uint8_t g_rgb_led_frame_buffer[DRIVER_LED_TOTAL] = {0};
+#endif
 #ifdef RGB_MATRIX_FRAMEBUFFER_EFFECTS
 uint8_t g_rgb_frame_buffer[MATRIX_ROWS][MATRIX_COLS] = {{0}};
 #endif  // RGB_MATRIX_FRAMEBUFFER_EFFECTS
