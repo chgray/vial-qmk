@@ -171,13 +171,11 @@ led_config_t g_led_config = {
              67, 66, 65, 64, 63,    62, 61, 60, 59, 58,     57, 56, 55, 54, 53,
              68, 69, 70, 97, 75,    76, 77, 78, 79, 80,     81)
  , {
-YD1, YD6, YD11, YD16, YD21, YD26, YD31, YD36, YD41, YD46, YD51, YD56, YD61, YD66, YD71, YD76, YD81, YD86, YD90, YD94, YD98,
-YD2, YD7, YD12, YD17, YD22, YD27, YD32, YD37, YD42, YD47, YD52, YD57, YD62, YD67, YD72, YD77, YD82, YD87, YD91, YD95,
-YD3, YD8, YD13, YD18, YD23, YD28, YD33, YD38, YD43, YD48, YD53, YD58, YD63, YD68, YD73, YD78, YD83, YD88, YD92, YD96,
-YD4, YD9, YD14, YD19, YD24, YD29, YD34, YD39, YD44, YD49, YD54, YD59, YD64, YD69, YD74, YD79, YD84, YD89, YD93, YD97,
-YD5, YD10, YD15, YD20, YD25, YD30, YD35, YD40, YD45, YD50, YD55, YD60, YD65, YD70, YD75, YD80, YD85
-
-
+        YD1, YD6, YD11, YD16, YD21,   YD26, YD31, YD36, YD41, YD46,   YD51, YD56, YD61, YD66, YD71,   YD76, YD81, YD86, YD90, YD94,
+        YD98, YD2, YD7, YD12, YD17,   YD22, YD27, YD32, YD37, YD42,   YD47, YD52, YD57, YD62, YD67,   YD72, YD77, YD82, YD87, YD91,
+        YD95, YD3, YD8, YD13, YD18,   YD23, YD28, YD33, YD38, YD43,   YD48, YD53, YD58, YD63, YD68,   YD73, YD78, YD83, YD88, YD92,
+        YD96, YD4, YD9, YD14, YD19,   YD24, YD29, YD34, YD39, YD44,   YD49, YD54, YD59, YD64, YD69,   YD74, YD79, YD84, YD89, YD93,
+        YD97, YD5, YD10, YD15, YD20,  YD25, YD30, YD35, YD40, YD45,   YD50, YD55, YD60, YD65, YD70,   YD75, YD80, YD85
 
  },{
              4, 4, 4, 4, 4,    4, 4, 4, 4, 4,     4, 4, 4, 4, 4,    4, 4, 4,
@@ -187,3 +185,16 @@ YD5, YD10, YD15, YD20, YD25, YD30, YD35, YD40, YD45, YD50, YD55, YD60, YD65, YD7
              4, 4, 4, 4, 4,    4, 4, 4, 4, 4,     4, 4, 4, 4, 4,
              4, 4, 4, 2, 2,    4, 2, 2, 4, 4,     4, 4, 4, 4, 4
 } };
+
+
+void matrix_init_kb()
+{
+    matrix_init_user();
+    uprintf("Welcome to Log0 YEET 3.3!!!");
+
+    int i=6000;
+    for(;i>0; --i)
+    {
+        uprintf("....booting in %d\r\n",i);
+    }
+}

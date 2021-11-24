@@ -9,9 +9,9 @@
 #define DISABLE_LEADER
 
 #ifndef NO_PRINT
-#error "ERROR : NO_PRINT should be set so the image fits"
+//#error "ERROR : NO_PRINT should be set so the image fits"
 #endif
 
 #ifndef NO_DEBUG
-#error "ERROR : no_debug should be set so the image fits"
+//#error "ERROR : no_debug should be set so the image fits"
 #endif
