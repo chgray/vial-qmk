@@ -38,4 +38,4 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 
 SWAP_HANDS_ENABLE= no  # Allow swapping hands of keyboard
 
-EXTRAFLAGS += -flto
+EXTRAFLAGS += -flto -save-temps
