@@ -1,7 +1,7 @@
 #if defined(RGB_MATRIX_FRAMEBUFFER_EFFECTS) && defined(ENABLE_RGB_MATRIX_TYPING_HEATMAP)
 
 
-//uint8_t g_rgb_led_frame_buffer[DRIVER_LED_TOTAL] = {{0}};
+uint8_t g_rgb_led_frame_buffer[DRIVER_LED_TOTAL] = {{0}};
 
 #define RGB_MATRIX_EFFECT_TYPING_HEATMAP
 RGB_MATRIX_EFFECT(TYPING_HEATMAP)
