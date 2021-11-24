@@ -45,7 +45,7 @@
 #define LOCKING_RESYNC_ENABLE
 
 //https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effects
-#if 1
+#if 0
 
 #define DISABLE_RGB_MATRIX_ALPHAS_MODS
 #define DISABLE_RGB_MATRIX_GRADIENT_UP_DOWN

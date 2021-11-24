@@ -6,7 +6,7 @@ This doc will include all currently available information, including low level i
 
 **Note**: given that all Drop, Inc. keyboards to date have used the same MCU and the same protocol, the MCU and protocol documentation should apply to all keyboards in Massdrop folder. Most HID-related information however is product-specific and will not apply to other keyboards.
 
-### MCU 
+### MCU
 
 * Microchip Technology SAMD51J18A
 * RISC 32-Bit
@@ -27,3 +27,9 @@ This doc will include all currently available information, including low level i
 * PRODUCT_ID          0xEEC5
 * MANUFACTURER        "Massdrop Inc."
 * PRODUCT             "Massdrop Hub"
+
+
+### CHGRAY Notes
+./mdloader_linux -D ~/Source/vial-qmk/.build/massdrop_ctrl_default.bin -p /dev/ttyACM0 --restart
+
+https://github.com/Massdrop/mdloader/releases/tag/0.0.1
