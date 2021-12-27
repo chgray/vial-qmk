@@ -1,4 +1,4 @@
-/* Copyright 2019 omkbd
+/* Copyright 2021 omkbd
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,8 +17,8 @@
 #pragma once
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x0000
+#define VENDOR_ID       0x3680
+#define PRODUCT_ID      0x5658
 #define DEVICE_VER      0x0005
 #define MANUFACTURER    Omkbd
 #define PRODUCT         runner3680
@@ -51,11 +51,26 @@
 
 /* ws2812 RGB LED */
 #define RGB_DI_PIN D3
-#define RGBLIGHT_ANIMATIONS
+#ifdef RGBLIGHT_ENABLE
+#define RGBLIGHT_EFFECT_BREATHING
+#define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#define RGBLIGHT_EFFECT_SNAKE
+#define RGBLIGHT_EFFECT_KNIGHT
+#define RGBLIGHT_EFFECT_CHRISTMAS
+#define RGBLIGHT_EFFECT_STATIC_GRADIENT
+#define RGBLIGHT_EFFECT_RGB_TEST
+#define RGBLIGHT_EFFECT_ALTERNATING
+#define RGBLIGHT_EFFECT_TWINKLE
 #define RGBLED_NUM 70
 #define RGBLIGHT_SPLIT
 #define RGBLED_SPLIT { 30, 40 }    // Number of LEDs
 #define RGBLIGHT_LIMIT_VAL 100
+#endif
+#ifdef RGB_MATRIX_ENABLE
+#define DRIVER_LED_TOTAL 70
+#define RGB_MATRIX_SPLIT { 30, 40 }    // Number of LEDs
+#endif
 
 #define SOFT_SERIAL_PIN D2
 #define SELECT_SOFT_SERIAL_SPEED 1
