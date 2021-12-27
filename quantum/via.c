@@ -163,10 +163,13 @@ void via_set_layout_options(uint32_t value) {
 
 // Called by QMK core to process VIA-specific keycodes.
 bool process_record_via(uint16_t keycode, keyrecord_t *record) {
+
     // Handle macros
     if (record->event.pressed) {
         if (keycode >= MACRO00 && keycode <= MACRO15) {
             uint8_t id = keycode - MACRO00;
+            uprintf("...not via key\r\n");
+
             dynamic_keymap_macro_send(id);
             return false;
         }
@@ -177,6 +180,8 @@ bool process_record_via(uint16_t keycode, keyrecord_t *record) {
     // can be available here to keyboards using VIA
     switch (keycode) {
         case FN_MO13:
+            uprintf("VIA Specific : MO13\r\n");
+
             if (record->event.pressed) {
                 layer_on(1);
                 update_tri_layer(1, 2, 3);
@@ -187,6 +192,9 @@ bool process_record_via(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
         case FN_MO23:
+
+            uprintf("VIA Specific : MO23\r\n");
+
             if (record->event.pressed) {
                 layer_on(2);
                 update_tri_layer(1, 2, 3);
