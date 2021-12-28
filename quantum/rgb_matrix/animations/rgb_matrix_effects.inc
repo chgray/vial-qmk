@@ -38,3 +38,4 @@
 #include "splash_anim.h"
 #include "solid_splash_anim.h"
 #include "vialrgb_direct_anim.h"
+#include "openrgb_direct_anim.h"
