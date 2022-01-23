@@ -27,3 +27,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
   return true;
 }
+
+
+
+#ifdef RGB_MATRIX_ENABLE
+#define USB_LED_CAPS_LOCK_SCANCODE      35
+#define LED_FLAG_KEYS (LED_FLAG_KEYLIGHT | LED_FLAG_MODIFIER)
+
+
+void rgb_matrix_indicators_user(void) {
+    if (IS_HOST_LED_ON(USB_LED_CAPS_LOCK)) {
+        rgb_matrix_set_color(USB_LED_CAPS_LOCK_SCANCODE, RGB_GREEN);
+    } else if (!HAS_ANY_FLAGS(rgb_matrix_get_flags(), LED_FLAG_KEYS)){
+        rgb_matrix_set_color(USB_LED_CAPS_LOCK_SCANCODE, 0, 0, 0);
+    }
+}
+#endif
